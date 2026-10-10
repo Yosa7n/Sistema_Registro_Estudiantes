@@ -1,6 +1,6 @@
 
 """Sistema de Registro de Estudiantes - Laboratorio 05-B."""
-
+from validaciones import validar_nombre, validar_codigo, validar_carrera
 MENSAJE_BIENVENIDA = "SISTEMA DE REGISTRO DE ESTUDIANTES"
 
 estudiantes = []
@@ -12,6 +12,18 @@ def registrar_estudiante():
     nombre = input("Nombre completo: ").strip()
     codigo = input("Codigo universitario: ").strip()
     carrera = input("Carrera profesional: ").strip()
+
+    # Verificar los datos antes del registro
+    for valor, funcion in [
+        (nombre, validar_nombre),
+        (codigo, validar_codigo),
+        (carrera, validar_carrera)
+    ]:
+        valido, mensaje = funcion(valor)
+
+        if not valido:
+            print(f"\nError: {mensaje}")
+            return
 
     estudiante = {
         "nombre": nombre,
