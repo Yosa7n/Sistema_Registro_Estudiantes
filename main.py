@@ -1,7 +1,7 @@
 
 """Sistema de Registro de Estudiantes - Laboratorio 05-B."""
 from validaciones import validar_nombre, validar_codigo, validar_carrera
-MENSAJE_BIENVENIDA = "PLATAFORMA UNIVERSITARIA DE GESTION ESTUDIANTIL"
+MENSAJE_BIENVENIDA = "PLATAFORMA UNIVERSITARIA ACADEMICO DE GESTION ESTUDIANTIL"
 
 estudiantes = []
 
